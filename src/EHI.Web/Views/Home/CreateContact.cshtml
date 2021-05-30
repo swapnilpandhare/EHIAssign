@@ -1,0 +1,47 @@
+﻿@model WebApplication1.Models.ContactInfo
+@{
+    ViewData["Title"] = "Create contact";
+}
+<div class="text-center">
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateContact">
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td><input asp-for="@Model.FirstName" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td><input asp-for="@Model.LastName" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Email Address: </td>
+                <td><input asp-for="@Model.Email" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Phone Number: </td>
+                <td><input asp-for="@Model.PhoneNo" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Gender: </td>
+                <td>                  
+                    <div id="RadioButtonGroup">
+                        <label asp-for="@Model.Gender" class="radio-inline">
+                            <input asp-for="@Model.Gender" value="true" type="radio">Male
+                        </label>
+                        <label asp-for="@Model.Gender" class="radio-inline">
+                            <input asp-for="@Model.Gender" value="false"  type="radio">Female
+                        </label>                     
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @ViewBag.Name
+    </form>
+
+
+</div>
